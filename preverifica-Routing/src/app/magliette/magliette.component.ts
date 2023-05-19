@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Maglietta } from '../models/ecommerce.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-magliette',
@@ -7,5 +8,9 @@ import { Maglietta } from '../models/ecommerce.model';
   styleUrls: ['./magliette.component.css']
 })
 export class MaglietteComponent {
-  @Input() magliette: Maglietta[];
+  magliette: Maglietta[];
+
+  constructor(private router: Router) {
+    this.magliette = this.router.getCurrentNavigation().extras.state as Maglietta[];
+  }
 }

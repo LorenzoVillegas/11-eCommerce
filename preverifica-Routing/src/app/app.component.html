@@ -1,4 +1,10 @@
-<a href='/scarpe'>Scarpe</a>
-<a href='/magliette'>Magliette</a>
-
-<router-outlet></router-outlet>
+<div class="container">
+    <div class="navbar navbar-expand-lg navbar-light bg-light">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item nav-link" routerLink="/magliette" [state]="data.magliette" routerLinkActive="active-menu">Magliette ({{data.magliette.length}})</li>
+        <li class="nav-item nav-link" routerLink="/scarpe" [state]="data.scarpe" routerLinkActive="active-menu">Scarpe ({{data.scarpe.length}})</li>
+        </ul>
+    </div>
+    <router-outlet></router-outlet>
+    <footer class="bg-light text-center">ECommerce - 2023</footer>
+</div>

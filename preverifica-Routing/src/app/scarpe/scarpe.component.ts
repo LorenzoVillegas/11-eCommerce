@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Scarpa } from '../models/ecommerce.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-scarpe',
@@ -7,5 +8,9 @@ import { Scarpa } from '../models/ecommerce.model';
   styleUrls: ['./scarpe.component.css']
 })
 export class ScarpeComponent {
-  @Input() scarpe: Scarpa[];
+  scarpe: Scarpa[];
+
+  constructor(private router: Router) {
+    this.scarpe = this.router.getCurrentNavigation().extras.state as Scarpa[];
+  }
 }
